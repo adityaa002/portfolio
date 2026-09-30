@@ -1,0 +1,1893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Aditya - Software Engineer specializing in Java, Spring Boot, REST APIs, Microservices, SQL and DevOps.">
+
+    <title>Aditya | Software Engineer</title>
+
+    <style>
+
+        /* =========================
+           GLOBAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            background: #050816;
+            color: #f8fafc;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1150px, 90%);
+            margin: auto;
+        }
+
+        /* =========================
+           BACKGROUND
+        ========================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #00d9ff;
+            opacity: 0.06;
+            filter: blur(150px);
+            top: -200px;
+            left: -200px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #7c3aed;
+            opacity: 0.07;
+            filter: blur(150px);
+            bottom: -200px;
+            right: -200px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(5, 8, 22, 0.75);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-container {
+            height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #22d3ee;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #94a3b8;
+            font-size: 0.92rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #22d3ee;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        #home {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding-top: 100px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-label {
+            color: #22d3ee;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(3.5rem, 8vw, 6.8rem);
+            line-height: 0.95;
+            letter-spacing: -6px;
+            margin: 20px 0;
+        }
+
+        .gradient-text {
+            background:
+                linear-gradient(
+                    90deg,
+                    #22d3ee,
+                    #ffffff,
+                    #a78bfa
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-description {
+            color: #94a3b8;
+            max-width: 650px;
+            font-size: 1.1rem;
+        }
+
+        .typing {
+            margin-top: 20px;
+            color: #e2e8f0;
+            font-size: 1.05rem;
+        }
+
+        .cursor {
+            animation: blink 0.8s infinite;
+            color: #22d3ee;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 700;
+            border: 1px solid rgba(255,255,255,0.12);
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #22d3ee;
+            color: #031017;
+            border: none;
+        }
+
+        .btn-secondary {
+            color: #e2e8f0;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           TERMINAL
+        ========================= */
+
+        .terminal {
+            background: rgba(15,23,42,0.7);
+            border: 1px solid rgba(255,255,255,0.1);
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 30px 80px rgba(0,0,0,0.4);
+
+            animation: floating 5s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .terminal-header {
+            padding: 14px;
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.08);
+
+            display: flex;
+            gap: 7px;
+        }
+
+        .terminal-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #64748b;
+        }
+
+        .terminal-body {
+            padding: 25px;
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            font-size: 14px;
+
+            color: #cbd5e1;
+
+            line-height: 2;
+        }
+
+        .code-key {
+            color: #22d3ee;
+        }
+
+        .code-value {
+            color: #c4b5fd;
+        }
+
+        .code-comment {
+            color: #64748b;
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 110px 0;
+        }
+
+        .section-label {
+            color: #22d3ee;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            letter-spacing: -2px;
+            margin-top: 8px;
+        }
+
+        .section-description {
+            color: #94a3b8;
+            max-width: 700px;
+            margin-top: 12px;
+        }
+
+        /* =========================
+           CARDS
+        ========================= */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-top: 45px;
+        }
+
+        .card {
+            background:
+                rgba(15,23,42,0.65);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            border-radius: 16px;
+
+            padding: 25px;
+
+            backdrop-filter: blur(10px);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+
+            border-color:
+                rgba(34,211,238,0.35);
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,0.25);
+        }
+
+        .card-icon {
+            font-size: 1.7rem;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* =========================
+           TECH STACK
+        ========================= */
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 45px;
+        }
+
+        .tech {
+            padding: 18px;
+
+            border-radius: 12px;
+
+            background:
+                rgba(15,23,42,0.65);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            color: #cbd5e1;
+
+            transition: 0.3s;
+        }
+
+        .tech:hover {
+            color: #22d3ee;
+            transform: translateY(-4px);
+        }
+
+        .tech strong {
+            display: block;
+            color: #f8fafc;
+            margin-bottom: 5px;
+        }
+
+        /* =========================
+           PROJECT
+        ========================= */
+
+        .project-card {
+            margin-top: 45px;
+
+            padding: 35px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(15,23,42,0.9),
+                    rgba(15,23,42,0.55)
+                );
+
+            border:
+                1px solid rgba(255,255,255,0.1);
+
+            border-radius: 20px;
+        }
+
+        .project-label {
+            color: #22d3ee;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .project-card h3 {
+            font-size: 2rem;
+            margin: 8px 0;
+        }
+
+        .project-card > p {
+            color: #94a3b8;
+            max-width: 800px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .tag {
+            padding: 5px 11px;
+
+            border-radius: 50px;
+
+            color: #a5f3fc;
+
+            background:
+                rgba(34,211,238,0.08);
+
+            border:
+                1px solid rgba(34,211,238,0.15);
+
+            font-size: 0.78rem;
+        }
+
+        .responsibilities {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+
+            margin-top: 18px;
+        }
+
+        .responsibility {
+            padding: 11px;
+
+            background:
+                rgba(255,255,255,0.03);
+
+            border-radius: 9px;
+
+            color: #cbd5e1;
+
+            font-size: 0.84rem;
+        }
+
+        /* =========================
+           JOURNEY
+        ========================= */
+
+        .timeline {
+            margin-top: 45px;
+
+            border-left:
+                1px solid rgba(255,255,255,0.15);
+
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+        .timeline-item::before {
+            content: "";
+
+            position: absolute;
+
+            width: 10px;
+            height: 10px;
+
+            border-radius: 50%;
+
+            background: #22d3ee;
+
+            left: -36px;
+            top: 7px;
+
+            box-shadow:
+                0 0 15px #22d3ee;
+        }
+
+        .timeline-item h3 {
+            margin-bottom: 5px;
+        }
+
+        .timeline-item p {
+            color: #94a3b8;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-box {
+            margin-top: 45px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 30px;
+        }
+
+        .contact-card {
+            padding: 30px;
+
+            background:
+                rgba(15,23,42,0.7);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            border-radius: 16px;
+        }
+
+        .contact-item {
+            margin-top: 18px;
+        }
+
+        .contact-item span {
+            display: block;
+            color: #64748b;
+            font-size: 0.78rem;
+            margin-bottom: 3px;
+        }
+
+        .contact-item a {
+            color: #cbd5e1;
+        }
+
+        .contact-item a:hover {
+            color: #22d3ee;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top:
+                1px solid rgba(255,255,255,0.08);
+
+            padding: 30px 0;
+
+            text-align: center;
+
+            color: #64748b;
+
+            font-size: 0.85rem;
+        }
+
+        /* =========================
+           SCROLL ANIMATION
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width: 900px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .terminal {
+                display: none;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .responsibilities {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-box {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width: 600px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .responsibilities {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="container nav-container">
+
+        <a href="#home" class="logo">
+            Aditya<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#journey">Journey</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<main>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section id="home">
+
+    <div class="container hero">
+
+        <div class="reveal">
+
+            <div class="hero-label">
+                Software Engineer • Backend Focused
+            </div>
+
+            <h1>
+                Build.<br>
+                <span class="gradient-text">Learn.</span><br>
+                Ship.
+            </h1>
+
+            <p class="hero-description">
+
+                I'm Aditya, a Computer Science graduate focused on
+                building reliable software with Java, Spring Boot,
+                REST APIs, Microservices and modern development tools.
+
+            </p>
+
+            <div class="typing">
+                <span id="typed"></span>
+                <span class="cursor">|</span>
+            </div>
+
+            <div class="hero-buttons">
+
+                <a href="#projects"
+                   class="btn btn-primary">
+
+                    View Projects ↓
+
+                </a>
+
+                <a href="#contact"
+                   class="btn btn-secondary">
+
+                    Let's Connect
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- TERMINAL -->
+
+        <div class="terminal reveal">
+
+            <div class="terminal-header">
+
+                <span class="terminal-dot"></span>
+                <span class="terminal-dot"></span>
+                <span class="terminal-dot"></span>
+
+            </div>
+
+            <div class="terminal-body">
+
+                <div class="code-comment">
+                    // developer.profile
+                </div>
+
+                <div>{</div>
+
+                <div>
+                    &nbsp;&nbsp;
+                    <span class="code-key">"name"</span>:
+                    <span class="code-value">"Aditya"</span>,
+                </div>
+
+                <div>
+                    &nbsp;&nbsp;
+                    <span class="code-key">"role"</span>:
+                    <span class="code-value">"Software Engineer"</span>,
+                </div>
+
+                <div>
+                    &nbsp;&nbsp;
+                    <span class="code-key">"focus"</span>:
+                    <span class="code-value">"Java Backend"</span>,
+                </div>
+
+                <div>
+                    &nbsp;&nbsp;
+                    <span class="code-key">"stack"</span>: [
+                </div>
+
+                <div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="code-value">"Java"</span>,
+                    <span class="code-value">"Spring Boot"</span>,
+                </div>
+
+                <div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="code-value">"REST"</span>,
+                    <span class="code-value">"Microservices"</span>,
+                </div>
+
+                <div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="code-value">"SQL"</span>,
+                    <span class="code-value">"Docker"</span>,
+                    <span class="code-value">"AWS"</span>
+                </div>
+
+                <div>
+                    &nbsp;&nbsp;]
+                </div>
+
+                <div>}</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="container reveal">
+
+        <div class="section-label">
+            01 — About
+        </div>
+
+        <h2 class="section-title">
+            Turning requirements into working software.
+        </h2>
+
+        <p class="section-description">
+
+            Dedicated and adaptable software engineer with hands-on
+            project experience. I enjoy understanding requirements,
+            breaking complex problems into smaller tasks and building
+            maintainable applications.
+
+        </p>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">
+                    ⚙️
+                </div>
+
+                <h3>
+                    Backend
+                </h3>
+
+                <p>
+                    Core Java, Spring Boot, RESTful Web Services,
+                    Microservices and API development.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🗄️
+                </div>
+
+                <h3>
+                    Database
+                </h3>
+
+                <p>
+                    SQL, relational database design, queries,
+                    CRUD operations and reporting.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🧪
+                </div>
+
+                <h3>
+                    Engineering
+                </h3>
+
+                <p>
+                    Requirement analysis, unit testing,
+                    debugging and modular development.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🚀
+                </div>
+
+                <h3>
+                    DevOps
+                </h3>
+
+                <p>
+                    Maven, Docker, Jenkins, CI/CD and
+                    AWS fundamentals.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+    <div class="container reveal">
+
+        <div class="section-label">
+            02 — Tech Stack
+        </div>
+
+        <h2 class="section-title">
+            Tools I build with.
+        </h2>
+
+        <p class="section-description">
+
+            A growing engineering toolkit focused on Java backend
+            development and production-oriented workflows.
+
+        </p>
+
+
+        <div class="tech-grid">
+
+            <div class="tech">
+                <strong>Java</strong>
+                Core Java • Java 8 • OOP • Collections • Streams
+            </div>
+
+            <div class="tech">
+                <strong>Spring</strong>
+                Spring Boot • REST • DI • JPA/Hibernate
+            </div>
+
+            <div class="tech">
+                <strong>Architecture</strong>
+                Microservices • MVC • Layered Architecture
+            </div>
+
+            <div class="tech">
+                <strong>Database</strong>
+                SQL • MySQL • MS SQL Server
+            </div>
+
+            <div class="tech">
+                <strong>DevOps</strong>
+                Docker • Jenkins • CI/CD • Maven
+            </div>
+
+            <div class="tech">
+                <strong>Frontend</strong>
+                Angular • HTML • CSS • JavaScript
+            </div>
+
+            <div class="tech">
+                <strong>Tools</strong>
+                Eclipse • IntelliJ • VS Code • Postman • Git
+            </div>
+
+            <div class="tech">
+                <strong>Cloud</strong>
+                AWS • EC2 • Deployment fundamentals
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+
+
+```html
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+    <div class="container reveal">
+
+        <div class="section-label">
+            03 — Featured Projects
+        </div>
+
+        <h2 class="section-title">
+            Systems I've built.
+        </h2>
+
+        <p class="section-description">
+            Full-stack applications and backend systems built with
+            Java, Spring Boot, Angular, REST APIs, databases and
+            modern deployment tools.
+        </p>
+
+
+        <!-- =========================
+             PROJECT 01 — HMS
+        ========================= -->
+
+        <div class="project-card featured-project">
+
+            <div class="project-label">
+                FEATURED PROJECT • FULL STACK APPLICATION
+            </div>
+
+            <h3>
+                SHARVÉN — Hotel Management System
+            </h3>
+
+            <p>
+
+                A full-stack hotel management platform designed to
+                manage users, rooms, guests and bookings through a
+                modern Angular frontend and Spring Boot REST API backend.
+
+                The application follows a layered architecture with
+                authentication, role-based authorization, database
+                persistence and a deployment-ready development workflow.
+
+            </p>
+
+
+            <!-- TECH STACK -->
+
+            <div class="tags">
+
+                <span class="tag">
+                    Java
+                </span>
+
+                <span class="tag">
+                    Spring Boot
+                </span>
+
+                <span class="tag">
+                    Angular
+                </span>
+
+                <span class="tag">
+                    REST API
+                </span>
+
+                <span class="tag">
+                    JWT
+                </span>
+
+                <span class="tag">
+                    MySQL
+                </span>
+
+                <span class="tag">
+                    Docker
+                </span>
+
+                <span class="tag">
+                    Jenkins
+                </span>
+
+            </div>
+
+
+            <!-- ARCHITECTURE -->
+
+            <h4 class="project-heading">
+                Application Architecture
+            </h4>
+
+            <div class="architecture-flow">
+
+                <div class="architecture-box">
+                    <strong>Angular</strong>
+                    <span>Frontend UI</span>
+                </div>
+
+                <div class="architecture-arrow">
+                    →
+                </div>
+
+                <div class="architecture-box">
+                    <strong>REST API</strong>
+                    <span>HTTP / JSON</span>
+                </div>
+
+                <div class="architecture-arrow">
+                    →
+                </div>
+
+                <div class="architecture-box">
+                    <strong>Spring Boot</strong>
+                    <span>Business Layer</span>
+                </div>
+
+                <div class="architecture-arrow">
+                    →
+                </div>
+
+                <div class="architecture-box">
+                    <strong>MySQL</strong>
+                    <span>Persistence</span>
+                </div>
+
+            </div>
+
+
+            <!-- FEATURES -->
+
+            <h4 class="project-heading">
+                Key Features
+            </h4>
+
+            <div class="responsibilities">
+
+                <div class="responsibility">
+                    User Management
+                </div>
+
+                <div class="responsibility">
+                    Role-Based Authorization
+                </div>
+
+                <div class="responsibility">
+                    JWT Authentication
+                </div>
+
+                <div class="responsibility">
+                    Room Management
+                </div>
+
+                <div class="responsibility">
+                    Room Availability
+                </div>
+
+                <div class="responsibility">
+                    Guest Management
+                </div>
+
+                <div class="responsibility">
+                    Booking Management
+                </div>
+
+                <div class="responsibility">
+                    RESTful APIs
+                </div>
+
+            </div>
+
+
+            <!-- ENGINEERING -->
+
+            <h4 class="project-heading">
+                Engineering Highlights
+            </h4>
+
+            <div class="responsibilities">
+
+                <div class="responsibility">
+                    Layered Architecture
+                </div>
+
+                <div class="responsibility">
+                    DTO / DAO Pattern
+                </div>
+
+                <div class="responsibility">
+                    Service Layer
+                </div>
+
+                <div class="responsibility">
+                    Controller Layer
+                </div>
+
+                <div class="responsibility">
+                    API Validation
+                </div>
+
+                <div class="responsibility">
+                    Exception Handling
+                </div>
+
+                <div class="responsibility">
+                    MySQL Persistence
+                </div>
+
+                <div class="responsibility">
+                    Docker Deployment
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT ACTIONS -->
+
+            <div class="hero-buttons">
+
+                <a href="YOUR_HMS_GITHUB_REPOSITORY"
+                   target="_blank"
+                   class="btn btn-primary">
+
+                    View Source Code →
+
+                </a>
+
+                <a href="YOUR_HMS_LIVE_DEMO"
+                   target="_blank"
+                   class="btn btn-secondary">
+
+                    Live Demo ↗
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================
+             PROJECT 02 — ORS
+        ========================= -->
+
+        <div class="project-card">
+
+            <div class="project-label">
+                FULL STACK • JAVA + ANGULAR
+            </div>
+
+            <h3>
+                ORS Project 10
+            </h3>
+
+            <p>
+
+                A full-stack web application developed using
+                Spring Boot and Angular with JWT-based authentication,
+                REST APIs, MySQL and containerized deployment.
+
+            </p>
+
+
+            <div class="tags">
+
+                <span class="tag">Spring Boot</span>
+                <span class="tag">Angular</span>
+                <span class="tag">JWT</span>
+                <span class="tag">REST API</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Jenkins</span>
+
+            </div>
+
+
+            <div class="responsibilities">
+
+                <div class="responsibility">
+                    Authentication
+                </div>
+
+                <div class="responsibility">
+                    Authorization
+                </div>
+
+                <div class="responsibility">
+                    REST APIs
+                </div>
+
+                <div class="responsibility">
+                    Angular UI
+                </div>
+
+                <div class="responsibility">
+                    MySQL
+                </div>
+
+                <div class="responsibility">
+                    Docker
+                </div>
+
+                <div class="responsibility">
+                    Jenkins CI/CD
+                </div>
+
+                <div class="responsibility">
+                    Tomcat Deployment
+                </div>
+
+            </div>
+
+
+            <div class="hero-buttons">
+
+                <a href="YOUR_ORS_GITHUB_REPOSITORY"
+                   target="_blank"
+                   class="btn btn-secondary">
+
+                    GitHub →
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================
+             PROJECT 03 — ATTENDANCE
+        ========================= -->
+
+        <div class="project-card">
+
+            <div class="project-label">
+                BACKEND • MAJOR PROJECT • TEAM OF 3
+            </div>
+
+            <h3>
+                Attendance Tracking System
+            </h3>
+
+            <p>
+
+                A backend-oriented application designed to automate
+                student attendance monitoring and notify students
+                regarding low attendance and exam eligibility.
+
+            </p>
+
+
+            <div class="tags">
+
+                <span class="tag">
+                    Core Java
+                </span>
+
+                <span class="tag">
+                    Spring Boot
+                </span>
+
+                <span class="tag">
+                    Microservices
+                </span>
+
+                <span class="tag">
+                    REST API
+                </span>
+
+                <span class="tag">
+                    MS SQL Server
+                </span>
+
+            </div>
+
+
+            <div class="responsibilities">
+
+                <div class="responsibility">
+                    Requirement Analysis
+                </div>
+
+                <div class="responsibility">
+                    Application Development
+                </div>
+
+                <div class="responsibility">
+                    Email Integration
+                </div>
+
+                <div class="responsibility">
+                    Scheduler
+                </div>
+
+                <div class="responsibility">
+                    Unit Testing
+                </div>
+
+                <div class="responsibility">
+                    Database Design
+                </div>
+
+                <div class="responsibility">
+                    Report Generation
+                </div>
+
+                <div class="responsibility">
+                    API Development
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+```
+
+
+<section id="projects">
+
+    <div class="container reveal">
+
+        <div class="section-label">
+            03 — Featured Project
+        </div>
+
+        <h2 class="section-title">
+            What I've built.
+        </h2>
+
+
+        <div class="project-card">
+
+            <div class="project-label">
+                Major Project • Team of 3
+            </div>
+
+            <h3>
+                Attendance Tracking System
+            </h3>
+
+            <p>
+
+                A backend-oriented application designed to automate
+                student attendance monitoring and improve communication
+                around low-attendance cases.
+
+            </p>
+
+
+            <div class="tags">
+
+                <span class="tag">
+                    Core Java
+                </span>
+
+                <span class="tag">
+                    Spring Boot
+                </span>
+
+                <span class="tag">
+                    Microservices
+                </span>
+
+                <span class="tag">
+                    REST API
+                </span>
+
+                <span class="tag">
+                    MS SQL Server
+                </span>
+
+            </div>
+
+
+            <h3 style="font-size:1.2rem;">
+                My Contributions
+            </h3>
+
+
+            <div class="responsibilities">
+
+                <div class="responsibility">
+                    Requirement analysis
+                </div>
+
+                <div class="responsibility">
+                    Task breakdown
+                </div>
+
+                <div class="responsibility">
+                    Application development
+                </div>
+
+                <div class="responsibility">
+                    Email integration
+                </div>
+
+                <div class="responsibility">
+                    Scheduler creation
+                </div>
+
+                <div class="responsibility">
+                    Unit testing
+                </div>
+
+                <div class="responsibility">
+                    Database tables
+                </div>
+
+                <div class="responsibility">
+                    Report generation
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     JOURNEY
+========================= -->
+
+<section id="journey">
+
+    <div class="container reveal">
+
+        <div class="section-label">
+            04 — Journey
+        </div>
+
+        <h2 class="section-title">
+            Education & growth.
+        </h2>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <h3>
+                    Bachelor of Engineering — Computer Science
+                </h3>
+
+                <p>
+                    R.G.P.V. Bhopal • 2021–2025 • 66.82%
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <h3>
+                    Machine Learning Certification
+                </h3>
+
+                <p>
+                    Completed a two-week college-organized
+                    Machine Learning certification program.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <h3>
+                    Practical Software Development
+                </h3>
+
+                <p>
+                    Built academic and personal projects while
+                    continuously expanding skills across Java,
+                    Spring Boot, Angular, databases and DevOps.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="container reveal">
+
+        <div class="section-label">
+            05 — Contact
+        </div>
+
+        <h2 class="section-title">
+            Let's build something useful.
+        </h2>
+
+        <p class="section-description">
+
+            Open to software engineering opportunities,
+            backend development roles and conversations
+            around building better products.
+
+        </p>
+
+
+        <div class="contact-box">
+
+            <div class="contact-card">
+
+                <h3>
+                    Connect with me
+                </h3>
+
+
+                <div class="contact-item">
+
+                    <span>
+                        EMAIL
+                    </span>
+
+                    <a href="mailto:aaeaditya02@gmail.com">
+aaeaditya02@gmail.com                    </a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <span>
+                        LINKEDIN
+                    </span>
+
+                    <a href="https://www.linkedin.com/in/aditya-sharma-50b788114/"
+                       target="_blank">
+
+                        https://www.linkedin.com/in/aditya-sharma-50b788114/
+
+                    </a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <span>
+                        GITHUB
+                    </span>
+
+                    <a href="https://github.com/adityaa002"
+                       target="_blank">
+
+                        github.com/adityaa002
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <h3>
+                    Recruiter Snapshot
+                </h3>
+
+                <p style="color:#94a3b8;margin-top:12px;">
+
+                    2025 Computer Science graduate with practical
+                    Java and Spring Boot project experience and an
+                    active focus on backend engineering, APIs,
+                    databases and deployment.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a href="mailto:YOUR_EMAIL@example.com"
+                       class="btn btn-primary">
+
+                        Contact Me
+
+                    </a>
+
+                    <a href="https://github.com/adityaa002"
+                       target="_blank"
+                       class="btn btn-secondary">
+
+                        GitHub →
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    © <span id="year"></span> Aditya.
+    Built with HTML, CSS & JavaScript.
+
+</footer>
+
+
+<script>
+
+    /* =========================
+       TYPING EFFECT
+    ========================= */
+
+    const roles = [
+        "Java Backend Developer",
+        "Spring Boot Developer",
+        "REST API Builder",
+        "Software Engineer"
+    ];
+
+    let roleIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    const typed = document.getElementById("typed");
+
+    function typeEffect() {
+
+        const currentRole = roles[roleIndex];
+
+        if (!deleting) {
+
+            typed.textContent =
+                currentRole.substring(0, charIndex++);
+
+            if (charIndex > currentRole.length) {
+
+                deleting = true;
+
+                setTimeout(typeEffect, 1200);
+
+                return;
+            }
+
+        } else {
+
+            typed.textContent =
+                currentRole.substring(0, charIndex--);
+
+            if (charIndex < 0) {
+
+                deleting = false;
+
+                roleIndex =
+                    (roleIndex + 1) % roles.length;
+
+                charIndex = 0;
+            }
+
+        }
+
+        setTimeout(
+            typeEffect,
+            deleting ? 45 : 80
+        );
+    }
+
+    typeEffect();
+
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    const observer =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("show");
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    document
+        .querySelectorAll(".reveal")
+        .forEach(element => {
+
+            observer.observe(element);
+
+        });
+
+
+    /* =========================
+       YEAR
+    ========================= */
+
+    document.getElementById("year")
+        .textContent = new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
